@@ -1,0 +1,21 @@
+name "Reactor Array"
+
+every 1 seconds do 
+
+    Input from DimStorage
+    Output 
+        minecraft:redstone,
+        minecraft:blue_ice,
+        powah:uraninite,
+        minecraft:coal
+    to each Reactor
+
+end
+
+every 30 seconds do 
+
+    Input fluid:minecraft:water from Sink each side
+    Output to Reactor
+
+end
+

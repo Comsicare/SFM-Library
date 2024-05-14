@@ -1,0 +1,58 @@
+name "Ore processing and autocrafting Array"
+
+every 1 ticks do
+
+    Input fe:: from each PowerSource each side
+    Output fe:: to each Furnace each side
+    Output fe:: to each Crafter each side
+    Output fe:: to each RawBlockCrafter each side
+
+end
+
+
+every 1 ticks do 
+
+    Input from each Source
+    Input from each SourceBarrel
+    Output to each Furnace each side
+
+end
+
+
+every 1 ticks do
+
+    Input from each Furnace each side
+    Output to ME
+
+end
+
+
+every 15 ticks do 
+
+    Input from HammerSource
+    Input from each ProcessingSource
+    
+    Output to each Crafter
+
+end
+
+every 2 ticks do 
+
+    Input from each Crafter slots 36-39
+    Output to each SourceBarrel
+
+end
+
+every 15 ticks do 
+
+    Input from ProcessingSource 
+    Output to RawBlockCrafter
+
+end
+
+every 2 ticks do 
+
+    Input from each RawBlockCrafter slots 36-39
+    Output to each Crafter
+
+end

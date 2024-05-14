@@ -1,0 +1,16 @@
+name "Mofugging Bees"
+
+every 60 seconds do 
+
+    Input from each BeeHive slots 2-10 
+    Output to ME
+
+end
+
+every 60 seconds do 
+
+    Input minecraft:glass_bottle from ME 
+    Output to BeeHive slots 0
+
+end
+        

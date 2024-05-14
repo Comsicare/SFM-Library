@@ -1,0 +1,152 @@
+name "Mekanism Fissile Fuel"
+
+every 1 ticks do 
+    Input fe:: from MEPower each side
+    Output fe:: to each YellowCake each side
+    Output fe:: to each UraniumOxide each side
+    Output fe:: to each SulfurDioxide each side
+    Output fe:: to each SulfurDust each side
+    Output fe:: to each Eloctrolyt each side
+    Output fe:: to each SulfurTrioxide each side
+    Output fe:: to each Vapor each side
+    Output fe:: to each SulfuricAcid each side
+    Output fe:: to each HydrofluoricAcid each side
+    Output fe:: to each FluoriteCrafter each side
+    Output fe:: to each SulfurCrafter each side
+    Output fe:: to each UraniumHexafluoride each side
+    Output fe:: to each Centrifuge each side 
+end
+
+every 20 ticks do 
+    Input alltheores:uranium_ingot from Dank 
+    Output retain 27 alltheores:uranium_ingot to each YellowCake each side
+end
+
+every 20 ticks do 
+    Input mekanism:yellow_cake_uranium from each YellowCake each side
+    Output retain 2048 mekanism:yellow_cake_uranium to Dank 
+end
+
+every 20 ticks do 
+    Input mekanism:yellow_cake_uranium from Dank
+    Output retain 16 mekanism:yellow_cake_uranium to each UraniumOxide each side 
+end
+
+every 20 ticks do 
+    Input gas:mekanism:uranium_oxide from each UraniumOxide each side 
+    Output gas:mekanism:uranium_oxide to UraniumOxideTank each side
+end
+
+every 20 ticks do 
+    Input mysticalagriculture:sulfur_essence from Dank 
+    Output to SulfurCrafter 
+end
+
+every 20 ticks do 
+    Input gtceu:sulfur_dust from SulfurCrafter 
+    Output to Dank
+end
+
+every 20 ticks do 
+    Input gtceu:sulfur_dust from Dank 
+    Output retain 8 gtceu:sulfur_dust to each SulfurDioxide each side
+end
+
+every 20 ticks do 
+    Input gas:mekanism:sulfur_dioxide from each SulfurDioxide each side 
+    Output gas:: to SulfurDioxideTank each side
+end
+
+every 20 ticks do 
+    Input thermal:sulfur from Dank 
+    Output thermal:sulfur to each SulfurDust each side
+end
+
+every 20 ticks do 
+    Input gtceu:sulfur_dust from each SulfurDust each side
+    Output retain 20000 gtceu:sulfur_dust to Dank
+end 
+
+every 5 ticks do 
+    Input fluid:*:water from Sink 
+    Output fluid:: to each Eloctrolyt each side
+end
+
+every 5 ticks do 
+    Input gas:: from each Eloctrolyt each side
+    Output gas:mekanism:hydrogen to HydrogenTank each side
+    Output gas:mekanism:oxygen to OxygenTank each side
+end
+
+every 10 ticks do 
+    Input gas:mekanism:oxygen from OxygenTank each side
+    Input gas:mekanism:sulfur_dioxide from SulfurDioxideTank each side
+    Output gas:mekanism:oxygen to each SulfurTrioxide top side
+    Output gas:mekanism:sulfur_dioxide to each SulfurTrioxide bottom side
+end
+
+every 10 ticks do 
+    Input gas:mekanism:sulfur_trioxide from each SulfurTrioxide each side
+    Output gas:mekanism:sulfur_trioxide to SulfurTrioxideTank each side
+end
+
+every 20 ticks do 
+    Input fluid:: from Sink each side
+    Output fluid:: to each Vapor each side
+end
+
+every 20 ticks do 
+    Input gas:: from each Vapor each side
+    Output gas:: to VaporTank each side
+end
+
+every 20 ticks do 
+    Input gas:: from VaporTank each side
+    Input gas:: from SulfurTrioxideTank each side
+    Output gas:mekanism:sulfur_trioxide to each SulfuricAcid top side
+    Output gas:mekanism:water_vapor to each SulfuricAcid bottom side
+end
+
+every 20 ticks do 
+    Input gas:mekanism:sulfuric_acid from each SulfuricAcid each side
+    Output gas:: to SulfuricAcidTank each side
+end
+
+every 20 ticks do 
+    Input gtceu:fluorite_gem from Dank
+    Output to FluoriteCrafter 
+end
+
+every 20 ticks do
+    Input gtceu:fluorite_block from FluoriteCrafter
+    Input gas:mekanism:sulfuric_acid from SulfuricAcidTank each side
+    Output retain 4 gtceu:fluorite_block to each HydrofluoricAcid each side
+    Output gas:: to each HydrofluoricAcid each side 
+end
+
+every 5 ticks do 
+    Input gas:: from each HydrofluoricAcid top side
+    Output gas:: to HydrofluoricAcidTank each side
+end
+
+every 20 ticks do 
+    Input gas:: from HydrofluoricAcidTank each side
+    Input gas:: from UraniumOxideTank each side
+    Output gas:mekanism:hydrofluoric_acid to each UraniumHexafluoride bottom side
+    Output gas:mekanism:uranium_oxide to each UraniumHexafluoride top side
+end
+
+every 20 ticks do 
+    Input gas:mekanism:uranium_hexafluoride from each UraniumHexafluoride each side
+    Output gas:: to UraniumHexafluorideTank each side
+end
+
+every 20 ticks do 
+    Input gas:: from UraniumHexafluorideTank each side
+    Output gas:: to each Centrifuge each side
+end
+
+every 20 ticks do
+    Input gas:mekanism:fissile_fuel from each Centrifuge each side
+    Output gas:: to FissileTank each side
+end

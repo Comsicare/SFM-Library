@@ -1,0 +1,71 @@
+name "Inscriber test script"
+
+every 5 ticks do 
+
+    Input fe:: from each EnergyCell TOP side
+
+    Output fe:: to each Inscriber TOP side
+    Output fe:: to each Inscriber2 TOP side
+
+end 
+
+
+every 20 ticks do
+    
+    Input from Source 
+    
+    Output retain 4 minecraft:diamond to each Engineering
+    Output retain 4 minecraft:gold_ingot to each Logic
+    Output retain 4 ae2:certus_quartz_crystal to each Calculation
+    Output retain 4 ae2:silicon to each Silicon
+
+end
+
+every 20 ticks do 
+
+    Input from Inscriber slots 3 
+
+    Output to Temp
+
+end
+ 
+
+every 2 seconds do 
+
+    Input from DimSupply
+
+    Output retain 512 minecraft:redstone to Temp
+
+end
+
+
+every 20 ticks do 
+
+    Input from Temp
+
+    Output retain 4 ae2:printed_engineering_processor to each Inscriber2 slots 0
+    Output retain 4 ae2:printed_logic_processor to each Inscriber2 slots 0
+    Output retain 4 ae2:printed_calculation_processor to each Inscriber2 slots 0
+    Output retain 4 ae2:printed_silicon to each Inscriber2 slots 1
+    Output retain 4 minecraft:redstone to each Inscriber2 slots 2
+
+end
+            
+
+every 5 seconds do
+
+    Input from Inscriber2 slots 3
+
+    Output to DimME
+
+end
+
+
+-- Diagnostic info --
+-- DateTime: 2024-05-04 04:07.00
+-- Game Version: Minecraft 1.20.1 (1.20.1/forge)
+-- Forge Version: 47.2.20
+-- SFM Version: 4.15.1
+
+-- Warnings
+-- * Label "Inscriber2" is assigned in the world at [-1411,139,-400] and is connected by cables but is not detected as a valid inventory.

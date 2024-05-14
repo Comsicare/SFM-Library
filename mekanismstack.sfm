@@ -1,0 +1,59 @@
+name "mekanism stack"
+every 1 seconds do
+    Input fe:: from each Batt each side
+    Output fe:: to each enrich each side 
+    Output  fe:: to each metall each side
+    Output fe:: to each compress each side
+end
+every 1 seconds do
+    input from each enrich east side
+    input from each metall east side
+    input from each compress east side
+    output to main_return
+end
+
+
+
+every 1 seconds do
+    Input from me_enrich
+    Output retain 32 to each enrich top side    
+end
+
+
+
+every 1 seconds do
+    input 
+         minecraft:iron_ingot,
+         alltheores:osmium_ingot
+
+    from me_metall
+    input mekanism:enriched_redstone from misc_mats
+    Output retain 16 to each metall_redstone each side    
+end
+every 1 seconds do
+    input 
+         mekanism:alloy_infused,
+         gtceu:obsidian_dust
+
+    from me_metall
+    input mekanism:enriched_diamond from misc_mats
+    Output retain 16 to each metall_diamond each side    
+end
+every 1 seconds do
+    input 
+         mekanism:alloy_reinforced
+
+    from me_metall
+    input mekanism:enriched_refined_obsidian from misc_mats
+    Output retain 16 to each metall_obsid each side    
+end
+
+every 1 seconds do 
+    Input alltheores:osmium_ingot from misc_mats 
+    Output to each compress bottom side
+end
+
+every 1 seconds do 
+    Input mekanism:dust_refined_obsidian from me_metall 
+    Output to each compress top side
+end

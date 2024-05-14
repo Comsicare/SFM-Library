@@ -1,0 +1,21 @@
+name "Mekanism Reactor Controller"
+
+every 1 ticks do 
+
+    Input fluid:: from Sink each side
+    Output fluid:: to WaterIn each side
+
+    Forget
+
+    Input gas:: from SteamOut each side
+    Output gas:: to Steam each side
+    
+END
+
+every 40 ticks do 
+
+    Input gas:: from FissileFuel each side
+    Output gas:: to FuelIn each side
+
+END
+

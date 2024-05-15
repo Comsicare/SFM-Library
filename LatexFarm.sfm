@@ -1,0 +1,35 @@
+name "Latex Extractors"
+
+-- Programm to automatically produce latex from oak logs. 
+-- Uses 2 RFTools Builder's to place and break the logs once they turn to stripped logs. 
+-- This setup is pretty much infinitely scaleable. 
+
+
+-- Power distribution
+
+every 1 ticks do 
+
+    Input fe:: from MEPower each side
+    Output fe:: to Extractor each side
+    Output fe:: to Builder each side
+
+end
+
+
+-- Ensuring the placing builder always has enough logs. 
+
+every 30 seconds do
+
+    input minecraft:oak_log from ME 
+    Output retain 256 minecraft:oak_log to BuilderBarrel
+end
+
+
+-- Storing the extracted Latex in the AE2 ME
+
+every 10 seconds do 
+
+    Input fluid:industrialforegoing:latex from Extractor each side 
+    Output fluid:*:* to ME 
+
+end

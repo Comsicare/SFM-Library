@@ -1,0 +1,78 @@
+name "Ore processing and autocrafting Array"
+
+-- This setup is for running a furnace array and automatic ore doublers with hammers from AllTheOres. 
+-- Unobtanium furnace and Crafter Tier 3 recommended. 
+
+
+--Power distribution
+
+every 1 ticks do
+
+    Input fe:: from each PowerSource each side
+    Output fe:: to each Furnace each side
+    Output fe:: to each Crafter each side
+    Output fe:: to each RawBlockCrafter each side
+
+end
+
+
+-- Moving items from the source barrel for smelting autocrafting, and items from an interface to the furnace
+
+every 1 ticks do 
+
+    Input from each Source
+    Input from each SourceBarrel
+    Output to each Furnace each side
+
+end
+
+
+-- Storing smelt result in ME
+
+every 1 ticks do
+
+    Input from each Furnace each side
+    Output to ME
+
+end
+
+
+-- Moving hammers and raw ores to the crafters for processing
+
+every 15 ticks do 
+
+    Input from HammerSource
+    Input from each ProcessingSource
+    
+    Output to each Crafter
+
+end
+
+
+-- Extracting ore dust specifically from the crafters output slots and putting it in the sourcebarrel
+
+every 2 ticks do 
+
+    Input from each Crafter slots 36-39
+    Output to each SourceBarrel
+
+end
+
+
+-- Moving RawOreBlocks from an interface to a crafter to be turned into raw ore chunks 
+
+every 15 ticks do 
+
+    Input from ProcessingSource 
+    Output to RawBlockCrafter
+
+end
+
+-- Moving the raw ores to the dust crafters 
+
+every 2 ticks do 
+
+    Input from each RawBlockCrafter slots 36-39
+    Output to each Crafter
+
+end

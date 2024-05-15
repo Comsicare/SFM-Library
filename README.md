@@ -14,6 +14,8 @@ Personally, I actually prefer the coding nature of the new SFM.<br>
 > [!CAUTION]
 > **Most programms will not work without adjusting the config.** 
 
+You will need to set minimal tick interval to 1 tick. 
+
 We have adjusted the minimum tick interval on the server that I wrote most of these on. Therefore you'll find many sub 20 ticks move triggers. <br>
 If you don't adjust the config in the world you wanna load them, they will fail. <br>
 

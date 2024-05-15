@@ -13,6 +13,7 @@ Personally, I actually prefer the coding nature of the new SFM.
 
 > [!CAUTION]
 > **Most programms will not work without adjusting the config.** 
+
 We have adjusted the minimum tick interval on the server that I wrote most of these on. Therefore you'll find many sub 20 ticks move triggers. If you don't adjust the config in the world you wanna load them, they will fail. 
 
 I am planning to gradually create default config compatible and in general more compatible versions of these programms. But many of these are just impractical with 20 tick intervals. 
@@ -20,5 +21,5 @@ I am planning to gradually create default config compatible and in general more 
 
 
 
-
-**Feel free to use these programms when playing. If you show them off, please provide proper credit.** 
+> [!IMPORTANT]
+> **Feel free to use these programms when playing. If you show them off, please provide proper credit.** 

@@ -25,7 +25,7 @@ I am planning to gradually create default config compatible and in general more 
 - [x] Collect all the programms I have written so far and bundle them in this repo
 - [x] Add comments to all programms to make them more readable
 - [x] Exchange labels with self explanatory ones 
-- [ ] Accumulate more programms 
+- [ ] Accumulate programms towards crafting an ATM-Star
 - [ ] Split off default config branch that contains only programms that will work on unmodified config
 - [ ] If applicable; rewrite sub 20 tick programms to work with default config
 

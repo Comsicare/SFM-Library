@@ -1,5 +1,11 @@
 name "Mofugging Bees"
 
+-- !!! WIP !!!
+
+-- programm for automation of productive bees
+
+
+
 every 60 seconds do 
 
     Input from each BeeHive slots 2-10 

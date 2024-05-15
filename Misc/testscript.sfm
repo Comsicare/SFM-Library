@@ -1,0 +1,11 @@
+name "test stuff"
+
+-- For testing, duh
+
+
+every 2 seconds do
+
+    INPUT FROM Testlabel1
+    OUTPUT TO Testlabel2
+
+end

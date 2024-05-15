@@ -1,0 +1,11 @@
+name "Turbine Array"
+
+-- Useless, deprecated, hows your day?
+
+
+every 1 ticks do 
+
+    Input gas:: from Steam each side
+    Output gas:: to Turbine
+
+END

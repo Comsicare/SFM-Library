@@ -1,0 +1,87 @@
+name "Inscriber Autocrafting"
+
+-- Programm to implement Inscriber autocrafting. Supports the default AE2 processors as well as some from the addon mods. 
+-- The specific slot assignments are done to support the extended inscriber without issues. It will work with default ones too. 
+
+
+every 5 ticks do 
+
+    Input fe:: from EnergyCell each side
+    Output fe:: to each Insc_Logic each side
+    Output fe:: to each Insc_Calculation each side
+    Output fe:: to each Insc_Engineering each side
+    Output fe:: to each Insc_Energy each side
+    Output fe:: to each Insc_Alternate each side
+    Output fe:: to each Insc_Accumulation each side
+    Output fe:: to each Insc_Silicon each side
+    Output fe:: to each Insc_Processor each side
+    Output fe:: to each Insc_Crush each side
+
+end
+
+
+every 30 ticks do 
+
+    Input from RawMaterials
+
+    Output retain 4 minecraft:gold_ingot to each Insc_Logic slots 2,6,10,14
+    Output retain 4 minecraft:diamond to each Insc_Engineering slots 2,6,10,14
+    Output retain 4 ae2:certus_quartz_crystal to each Insc_Calculation slots 2,6,10,14
+    Output retain 4 appflux:charged_redstone to each Insc_Energy slots 2,6,10,14
+    Output retain 4 ae2:silicon to each Insc_Silicon slots 2,6,10,14
+    Output retain 4 megacells:sky_steel_ingot to each Insc_Accumulation slots 2,6,10,14
+--    Output retain 8 minecraft:iron_block to each Insc_ slots 2,6,10,14
+
+end
+
+
+every 30 ticks do 
+
+    Input from each Insc_Logic slots 3,7,11,15
+    Input from each Insc_Calculation slots 3,7,11,15
+    Input from each Insc_Crush slots 3,7,11,15
+    Input from each Insc_Engineering slots 3,7,11,15
+    Input from each Insc_Energy slots 3,7,11,15
+    Input from each Insc_Accumulation slots 3,7,11,15
+    Input from each Insc_Silicon slots 3,7,11,15
+    Input from each Insc_Alternate slots 3,7,11,15
+    Input from each Insc_Processor slots 3,7,11,15
+
+    Output to ME 
+
+end 
+
+
+every 30 ticks do 
+
+    Input from IntermediateMaterials    
+
+    Output retain 4 minecraft:redstone to each Insc_Processor slots 2,6,10,14
+    Output retain 4 ae2:printed_silicon to each Insc_Processor slots 1,5,9,13
+    Output retain 4 ae2:printed_logic_processor to each Insc_Processor slots 0,4,8,12
+    Output retain 4 ae2:printed_calculation_processor to each Insc_Processor slots 0,4,8,12
+    Output retain 4 ae2:printed_engineering_processor to each Insc_Processor slots 0,4,8,12
+    Output retain 4 appflux:printed_energy_processor to each Insc_Processor slots 0,4,8,12
+
+end
+
+every 30 ticks do 
+
+    Input from IntermediateMaterials
+    Input ae2:fluix_crystal from RawMaterials
+        
+    Output retain 4 ae2:fluix_crystal to each Insc_Crush slots 2,6,10,14
+    Output retain 4 megacells:printed_accumulation_processor to each Insc_Alternate slots 0,4,8,12
+    Output retain 4 ae2:fluix_dust to each Insc_Alternate slots 2,6,10,14
+    Output retain 4 ae2:printed_silicon to each Insc_Alternate slots 1,5,9,13
+
+end
+
+every 30 ticks do 
+
+    Input from RawMaterials
+    
+    Output retain 4 minecraft:ender_pearl to each Insc_Crush slots 2,6,10,14
+    Output retain 4 ae2:sky_stone_block to each Insc_Crush slots 2,6,10,14
+
+end

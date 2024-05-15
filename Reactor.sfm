@@ -1,5 +1,9 @@
 name "Reactor Array"
 
+-- Automatically refuel the Powah reactors. 
+-- Adjust the type of ice to your needs. 
+
+
 every 1 seconds do 
 
     Input from DimStorage

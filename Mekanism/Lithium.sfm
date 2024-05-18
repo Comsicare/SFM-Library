@@ -1,0 +1,55 @@
+-- Programm to produce Lithium with Thermal Evaporation Plants 
+
+name "Lithium"
+
+every 1 ticks do 
+
+    Input fe:: from EnergyCell each side
+    Output fe:: to Heater each side
+    Output fe:: to Rotary each side
+    Output fe:: to each Crystalizer each side
+
+end
+
+every 1 ticks do 
+
+    Input fluid:*:water from Sink each side
+    Output fluid:: to Brine each side
+
+end
+
+every 1 ticks do 
+
+    Input fluid:mekanism:brine from Brine each side
+    Output fluid:: to each Lithium each side
+
+end
+
+every 20 ticks do 
+
+    Input fluid:mekanism:lithium from Lithium each side 
+    Output fluid:: to each Rotary each side 
+
+end
+
+every 20 ticks do 
+
+    Input gas:mekanism:lithium from Rotary each side
+    Output gas:: to each LithiumTank each side
+
+end
+
+every 20 ticks do 
+
+    Input gas:mekanism:lithium from each LithiumTank each side
+    Output gas:: to each Crystalizer each side
+
+end
+
+every 20 ticks do 
+
+    Input mekanism:dust_lithium from each Crystalizer each side
+    Output to ME 
+
+end
+

@@ -1,8 +1,5 @@
 name "Mekanism Fissile Fuel"
 
--- Fully automate the process of producing fissile fuel
-
-
 every 1 ticks do 
     Input fe:: from MEPower each side
     Output fe:: to each YellowCake each side
@@ -20,39 +17,39 @@ every 1 ticks do
     Output fe:: to each Centrifuge each side 
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input alltheores:uranium_ingot from Dank 
-    Output retain 27 alltheores:uranium_ingot to each YellowCake each side
+    Output alltheores:uranium_ingot to each YellowCake each side
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input mekanism:yellow_cake_uranium from each YellowCake each side
     Output retain 2048 mekanism:yellow_cake_uranium to Dank 
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input mekanism:yellow_cake_uranium from Dank
-    Output retain 16 mekanism:yellow_cake_uranium to each UraniumOxide each side 
+    Output mekanism:yellow_cake_uranium to each UraniumOxide each side 
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input gas:mekanism:uranium_oxide from each UraniumOxide each side 
     Output gas:mekanism:uranium_oxide to UraniumOxideTank each side
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input mysticalagriculture:sulfur_essence from Dank 
     Output to SulfurCrafter 
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input gtceu:sulfur_dust from SulfurCrafter 
     Output to Dank
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input gtceu:sulfur_dust from Dank 
-    Output retain 8 gtceu:sulfur_dust to each SulfurDioxide each side
+    Output gtceu:sulfur_dust to each SulfurDioxide each side
 end
 
 every 20 ticks do 
@@ -60,14 +57,14 @@ every 20 ticks do
     Output gas:: to SulfurDioxideTank each side
 end
 
-every 20 ticks do 
+every 60 ticks do 
     Input thermal:sulfur from Dank 
     Output thermal:sulfur to each SulfurDust each side
 end
 
-every 20 ticks do 
+every 120 ticks do 
     Input gtceu:sulfur_dust from each SulfurDust each side
-    Output retain 20000 gtceu:sulfur_dust to Dank
+    Output retain 2000 gtceu:sulfur_dust to Dank
 end 
 
 every 5 ticks do 

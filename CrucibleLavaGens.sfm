@@ -1,0 +1,26 @@
+NAME "CrucibleLavaGens"
+
+every 60 ticks do 
+    Input from CobbleDank
+    Output to each Crucible each side
+end
+
+every 60 ticks do 
+    Input fluid:: from Crucible each side 
+    Output fluid:: to Tank each side 
+end 
+
+every 30 ticks do 
+    Input fluid:: from Tank each side
+    Output fluid:: to Magmator each side 
+end
+
+every 5 ticks do 
+    Input fe:: from Magmator each side 
+    Output fe:: to EnergyCube each side 
+end
+
+every 5 seconds do 
+    INPUT minecraft:cobblestone from cobblegen each side 
+    OUTPUT to CobbleDank slots 0
+end
